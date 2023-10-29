@@ -1,6 +1,6 @@
-"""Python CMD program for generating valid Iranian national codes and saving them in a .txt file
+"""Python CMD program for generating valid Iranian national codes and saving them into a .txt file
 using Python version 3.11.4
-@version : 1.0
+@version : 1.1
 @license: MIT License
 @author : Arman Azarnik
 contact me at : armanazarnik@gmail.com

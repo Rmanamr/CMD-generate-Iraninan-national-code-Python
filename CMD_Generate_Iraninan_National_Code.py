@@ -1,4 +1,4 @@
-"""Python CMD program for generating valid Iranian national codes.
+"""Python CMD program for generating valid Iranian national codes and saving them in a .txt file
 using Python version 3.11.4
 @version : 1.0
 @license: MIT License
@@ -7,6 +7,7 @@ contact me at : armanazarnik@gmail.com
 """
 
 import random
+from datetime import datetime
 
 def main():
      """
@@ -29,6 +30,9 @@ def main():
 
         print("Your Iranian national codes :")
         array_Printer(non_Duplicated_Result)
+        write_Array_To_TXT_File(non_Duplicated_Result)
+        # passing the non_Duplicated_Result to write_Array_To_TXT_File for saving the generated non duplicated Iranian national codes in a .txt file
+
         print("**************************************************************************")
 
 
@@ -199,6 +203,27 @@ def array_Printer(array):
     """
     for element in array:
         print(element)
+
+
+def write_Array_To_TXT_File(array):
+    """
+    function for saving each element of the passed array in a line into a .txt file. 
+    @param array: an array of elements.
+    @type array: anything like integer, double and string.
+    """
+    file_Name = datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")
+    # naming each file by current time, so that there will not be 2 files with the same name.
+
+    file_Name_Format = str(file_Name) + ".txt"
+    f = open(file_Name_Format, "a")
+    f.write("Your Iranian national codes :")
+    f.write('\n')
+
+    for element in array:
+        f.write(element)
+        f.write('\n')
+        
+    f.close()
 
 
 if __name__ == '__main__':
